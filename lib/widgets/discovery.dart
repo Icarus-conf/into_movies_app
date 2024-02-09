@@ -34,7 +34,7 @@ class Discovery extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
                 imagePath,
-                width: 300,
+                width: 200,
                 fit: BoxFit.cover,
               ),
             ),
