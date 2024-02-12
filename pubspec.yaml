@@ -38,6 +38,8 @@ dependencies:
   http: ^1.2.0
   google_fonts: ^6.1.0
   carousel_slider: ^4.2.1
+  cached_network_image: ^3.3.1
+  flutter_spinkit: ^5.2.0
 
 dev_dependencies:
   flutter_test:

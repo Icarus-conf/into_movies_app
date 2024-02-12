@@ -5,7 +5,7 @@ import 'api_config.dart';
 
 Future<List<Movie>> fetchMovies() async {
   final response = await http.get(Uri.parse(
-    '${ApiConfig.baseUrl}/discover/movie?api_key=${ApiConfig.apiKey}',
+    '${ApiConfig.baseUrl}/trending/movie/day?api_key=${ApiConfig.apiKey}',
   ));
   if (response.statusCode == 200) {
     final data = json.decode(response.body);
