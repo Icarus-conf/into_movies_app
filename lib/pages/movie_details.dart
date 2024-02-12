@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:into_movies/components/text_format.dart';
 
@@ -26,9 +25,10 @@ class MovieDetails extends StatelessWidget {
                       height: 600,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: CachedNetworkImageProvider(
-                                '${ApiConfig.imageBaseUrl}${data.posterPath}')),
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                              '${ApiConfig.imageBaseUrl}${data.posterPath}'),
+                        ),
                         borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20),

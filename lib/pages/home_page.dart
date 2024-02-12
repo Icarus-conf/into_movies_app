@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -39,17 +38,9 @@ class _MoviesPageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height,
                 child: Stack(
                   children: [
-                    CachedNetworkImage(
-                      imageUrl:
-                          '${ApiConfig.imageBaseUrl}${snapshot.data![_current].posterPath}',
+                    Image.network(
+                      '${ApiConfig.imageBaseUrl}${snapshot.data![_current].posterPath}',
                       fit: BoxFit.cover,
-                      placeholder: (context, url) => const Center(
-                        child: SpinKitSquareCircle(
-                          color: Colors.blueGrey,
-                        ),
-                      ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
                     ),
                     Positioned(
                       top: 0,
@@ -124,19 +115,9 @@ class _MoviesPageState extends State<HomePage> {
                                               borderRadius:
                                                   BorderRadius.circular(20),
                                             ),
-                                            child: CachedNetworkImage(
-                                              imageUrl:
-                                                  '${ApiConfig.imageBaseUrl}${movie.posterPath}',
+                                            child: Image.network(
+                                              '${ApiConfig.imageBaseUrl}${movie.posterPath}',
                                               fit: BoxFit.cover,
-                                              placeholder: (context, url) =>
-                                                  const Center(
-                                                child: SpinKitSquareCircle(
-                                                  color: Colors.blueGrey,
-                                                ),
-                                              ),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      const Icon(Icons.error),
                                             ),
                                           ),
                                           const SizedBox(height: 20),
